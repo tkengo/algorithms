@@ -1,10 +1,11 @@
 def insertion_sort(a)
-  a.size.times do |i|
-    v = a[i + 1]
-    while i >= 0 && a[i] > v
-      a[i + 1] = a[i]
+  1.upto(a.size - 1) do |i|
+    v = a[i]
+    while i > 0 && a[i - 1] > v
+      a[i] = a[i - 1]
       i -= 1
     end
-    a[i + 1] = v
+    a[i] = v
   end
+  a
 end
