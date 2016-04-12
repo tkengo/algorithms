@@ -1,11 +1,13 @@
-def linear_maximum_subarray(a)
-  maxsofar = 0
-  maxendinghere = 0
-  a.each do |v|
-    maxendinghere = [ maxendinghere + v, 0 ].max
-    maxsofar = [ maxsofar, maxendinghere ].max
+class Array
+  def maximum_subarray
+    maxsofar = 0
+    maxendinghere = 0
+    self.each do |v|
+      maxendinghere = [ maxendinghere + v, 0 ].max
+      maxsofar = [ maxsofar, maxendinghere ].max
+    end
+    maxsofar
   end
-  maxsofar
 end
 
 def maximum_subarray(a, l = 0, h = a.size)
